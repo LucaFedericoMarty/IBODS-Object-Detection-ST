@@ -116,6 +116,17 @@ def drawBoundingBox(image_path, model_path, threshold, classes):
 
 #-----HEADER------
 
+labels = ['cordon',
+ 'autos',
+ 'personas',
+ 'cruces',
+ 'pozos',
+ 'parar',
+ 'cruzar',
+ 'bicicleta',
+ 'moto',
+ 'escalones']
+
 with st.container():
     st.title("IBODS Project Deployement")
     st.write("Esta es la pagina de pruebas para nuestro proyecto")
@@ -133,6 +144,6 @@ if image_file is not None:
 detect = st.button("Detect objects")
 
 if detect:
-    output_image = drawBoundingBox(input_image)
+    output_image = drawBoundingBox(input_image, model, thr, labels)
     st.image(output_image)
 
