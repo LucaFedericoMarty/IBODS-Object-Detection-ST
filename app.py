@@ -129,9 +129,6 @@ thr = st.sidebar.slider("Detection Threshold", min_value = 0.0, max_value = 1.0,
 image_file = st.file_uploader("Upload images for object detection", type=['png','jpeg'])
 
 model = st.file_uploader("Model", type=['tflite'])
-data = model.getvalue().decode('utf-8')
-parent_path = pathlib.Path(__file__).parent.parent.resolve()           
-save_path = os.path.join(parent_path, "data")
 
 if image_file is not None:
     input_image = Image.open(image_file)
