@@ -128,6 +128,7 @@ thr = st.sidebar.slider("Detection Threshold", min_value = 0.0, max_value = 1.0,
 image_file = st.file_uploader("Upload images for object detection", type=['png','jpeg'])
 
 model = st.file_uploader("Model", type=['tflite'])
+modelreal = os.path.basename(__file__)
 
 if image_file is not None:
     input_image = Image.open(image_file)
@@ -142,7 +143,7 @@ if detect:
     im.thumbnail((512, 512), Image.ANTIALIAS)
 
     # Load the TFLite model
-    interpreter = tf.lite.Interpreter(model_content=model)
+    interpreter = tf.lite.Interpreter(model_path=modelreal)
     interpreter.allocate_tensors()
 
     # Run inference and draw detection result on the local copy of the original file
