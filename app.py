@@ -5,6 +5,7 @@ from PIL import Image
 import os
 import tensorflow as tf
 import cv2
+import pathlib
 
 labels = ['cordon',
  'autos',
@@ -128,7 +129,9 @@ thr = st.sidebar.slider("Detection Threshold", min_value = 0.0, max_value = 1.0,
 image_file = st.file_uploader("Upload images for object detection", type=['png','jpeg'])
 
 model = st.file_uploader("Model", type=['tflite'])
-modelreal = os.path.basename(__file__)
+data = model.getvalue().decode('utf-8')
+parent_path = pathlib.Path(__file__).parent.parent.resolve()           
+save_path = os.path.join(parent_path, "data")
 
 if image_file is not None:
     input_image = Image.open(image_file)
@@ -143,7 +146,7 @@ if detect:
     im.thumbnail((512, 512), Image.ANTIALIAS)
 
     # Load the TFLite model
-    interpreter = tf.lite.Interpreter(model_path=modelreal)
+    interpreter = tf.lite.Interpreter(model_path=save_path)
     interpreter.allocate_tensors()
 
     # Run inference and draw detection result on the local copy of the original file
