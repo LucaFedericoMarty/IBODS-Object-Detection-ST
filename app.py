@@ -142,7 +142,7 @@ if detect:
     im.thumbnail((512, 512), Image.ANTIALIAS)
 
     # Load the TFLite model
-    interpreter = tf.lite.Interpreter(model_path=model)
+    interpreter = tf.lite.Interpreter(model_content=model)
     interpreter.allocate_tensors()
 
     # Run inference and draw detection result on the local copy of the original file
