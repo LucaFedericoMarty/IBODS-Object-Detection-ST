@@ -148,7 +148,7 @@ if detect:
 
     # Run inference and draw detection result on the local copy of the original file
     detection_result_image = run_odt_and_draw_results(
-      image_file,
+      input_image,
       interpreter,
       threshold=thr
 )
