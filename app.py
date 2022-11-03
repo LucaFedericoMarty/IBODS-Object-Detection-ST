@@ -104,7 +104,6 @@ def run_odt_and_draw_results(image_path, interpreter, threshold=0.5):
   original_uint8 = original_image_np.astype(np.uint8)
   return original_uint8
 
-
 #-----HEADER------
 
 labels = ['cordon',
@@ -126,7 +125,9 @@ thr = st.sidebar.slider("Detection Threshold", min_value = 0.0, max_value = 1.0,
 
 model = st.sidebar.selectbox("Select Model",  ({"EfficientDet0" : 'logs/model.tflite'}, {"EfficientDet1" : ': logs/model1.tflite'}))
 
-image_file = st.file_uploader("Upload images for object detection", type=['png','jpeg'])
+image_file = st.file_uploader("Upload images for object detection", type=['tflite'])
+
+model = st.file_uploader("Model", type=['png','jpeg'])
 
 if image_file is not None:
     input_image = Image.open(image_file)
