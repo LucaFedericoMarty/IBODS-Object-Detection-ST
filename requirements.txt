@@ -4,4 +4,4 @@ tensorflow-cpu
 opencv-python-headless
 Pillow
 pathlib
-tflite_support
+tensorflow_lite_support

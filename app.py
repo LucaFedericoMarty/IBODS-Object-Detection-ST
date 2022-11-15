@@ -6,7 +6,7 @@ import os
 import tensorflow as tf
 import cv2
 import pathlib
-from tflite_support import task
+from tensorflow_lite_support import task
 
 labels = ['cordon',
  'autos',
