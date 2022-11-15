@@ -1,7 +1,7 @@
 numpy
 streamlit
 tensorflow-cpu
-opencv-python
+opencv-python-headless
 Pillow
 pathlib
 tflite_support
