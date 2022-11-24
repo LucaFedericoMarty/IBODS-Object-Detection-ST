@@ -115,7 +115,7 @@ thr = st.sidebar.slider("Detection Threshold", min_value = 0.0, max_value = 1.0,
 
 # model = st.sidebar.selectbox("Select Model",  ({"EfficientDet0" : 'logs/model.tflite'}, {"EfficientDet1" : ': logs/model1.tflite'}))
 
-image_file = st.file_uploader("Upload images for object detection", type=['png','jpeg'])
+image_file = st.file_uploader("Upload images for object detection", type=['png','jpeg', 'jpg'])
 
 model = st.file_uploader("Model", type=['tflite'])
 
