@@ -1,4 +1,4 @@
-tensorflow==2.10
+tensorflow==2.8
 numpy==1.21.6
 streamlit==1.13.0
 opencv-python-headless==4.6.0.66
