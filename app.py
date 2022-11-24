@@ -7,16 +7,16 @@ import tensorflow as tf
 import cv2
 import pathlib
 
-labels = ['cordon',
- 'autos',
- 'personas',
- 'cruces',
- 'pozos',
- 'parar',
- 'cruzar',
+labels = ['auto',
  'bicicleta',
+ 'cordon',
+ 'cruces',
+ 'cruzar',
+ 'escalones',
  'moto',
- 'escalones']
+ 'parar',
+ 'persona',
+ 'pozo']
 
 CLASSES = labels 
 
@@ -106,17 +106,6 @@ def run_odt_and_draw_results(image_path, interpreter, threshold=0.5):
   return original_uint8
 
 #-----HEADER------
-
-labels = ['cordon',
- 'autos',
- 'personas',
- 'cruces',
- 'pozos',
- 'parar',
- 'cruzar',
- 'bicicleta',
- 'moto',
- 'escalones']
 
 with st.container():
     st.title("IBODS Project Deployement")
